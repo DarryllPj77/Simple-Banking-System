@@ -185,7 +185,7 @@ Console.WriteLine($"Interest Rate: {savingsAccount.InterestRate:P}");
 Console.WriteLine(DisplayAccountInfo.GetAccountInfo(savingsAccount));
 ```
 
-#### Task 8 — Create `CheckingAccount` 🟡 Current
+#### Task 8 — Create `CheckingAccount` ✅ Completed
 
 Create another child class that inherits from `BankAccount`:
 
@@ -198,7 +198,7 @@ SavingsAccount      CheckingAccount
 
 Give `CheckingAccount` a feature that distinguishes it from `SavingsAccount`.
 
-#### Task 9 — Work with Child Objects as `BankAccount` ⬜ Planned
+#### Task 9 — Work with Child Objects as `BankAccount` ✅ Completed
 
 Practice this relationship:
 
@@ -211,7 +211,7 @@ BankAccount account = new SavingsAccount(
 
 This demonstrates that a `SavingsAccount` is a `BankAccount` and prepares the project for polymorphism.
 
-#### Task 10 — Store Different Account Types Together ⬜ Planned
+#### Task 10 — Store Different Account Types Together ✅ Completed
 
 Confirm that the existing `List<BankAccount>` can contain both `SavingsAccount` and `CheckingAccount` objects:
 
@@ -223,7 +223,7 @@ _accounts
 └── CheckingAccount
 ```
 
-#### Task 11 — Review Inheritance Access Modifiers ⬜ Planned
+#### Task 11 — Review Inheritance Access Modifiers 🟡 Current
 
 Review how `public`, `private`, and `protected` members behave with inheritance. Use `protected` only when there is a legitimate design reason.
 
@@ -288,9 +288,9 @@ account.Withdraw(250m);
 - [x] Add the `InterestRate` property.
 - [x] Call the `BankAccount` constructor with `base(...)`.
 - [x] Test inherited `Deposit()` and `Withdraw()` behavior in `Program.cs`.
-- [ ] Create `CheckingAccount : BankAccount`.
-- [ ] Practice parent-type references to child objects.
-- [ ] Store savings and checking accounts in one collection.
+- [x] Create `CheckingAccount : BankAccount`.
+- [x] Practice parent-type references to child objects.
+- [x] Store savings and checking accounts in one collection.
 - [ ] Review `public`, `private`, and `protected` inheritance access.
 - [ ] Complete the inheritance relationship/design review.
 
