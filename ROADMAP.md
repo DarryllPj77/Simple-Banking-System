@@ -154,7 +154,7 @@ public class SavingsAccount : BankAccount
 }
 ```
 
-#### Task 7 — Test Inherited Members 🟡 Current
+#### Task 7 — Test Inherited Members ✅ Completed
 
 **File:** `Program.cs`
 
@@ -185,7 +185,7 @@ Console.WriteLine($"Interest Rate: {savingsAccount.InterestRate:P}");
 Console.WriteLine(DisplayAccountInfo.GetAccountInfo(savingsAccount));
 ```
 
-#### Task 8 — Create `CheckingAccount` ⬜ Planned
+#### Task 8 — Create `CheckingAccount` 🟡 Current
 
 Create another child class that inherits from `BankAccount`:
 
@@ -287,7 +287,7 @@ account.Withdraw(250m);
 - [x] Create `SavingsAccount : BankAccount`.
 - [x] Add the `InterestRate` property.
 - [x] Call the `BankAccount` constructor with `base(...)`.
-- [ ] Test inherited `Deposit()` and `Withdraw()` behavior in `Program.cs`.
+- [x] Test inherited `Deposit()` and `Withdraw()` behavior in `Program.cs`.
 - [ ] Create `CheckingAccount : BankAccount`.
 - [ ] Practice parent-type references to child objects.
 - [ ] Store savings and checking accounts in one collection.

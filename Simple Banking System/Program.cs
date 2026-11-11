@@ -10,16 +10,19 @@ namespace Simple_Banking_System
         {
             Console.WriteLine("Entry Point");
             BankService bankservice = new BankService();
-            BankAccount account1 = new BankAccount(123456789,"Darryll Pajaganas");
+            SavingsAccount account2 = new SavingsAccount(123456789, "Darryll Pajaganas", 3);
+            decimal depositAmount = 5000m;
+            decimal withdrawalAmount = 500m;
 
-            bankservice.AddAccount(account1);
+            bankservice.AddAccount(account2);
+            account2.Deposit(depositAmount);
+            Console.WriteLine($"Deposit Amount: {depositAmount}");
+            Console.WriteLine(DisplayAccountInfo.GetAccountInfo(account2));
+            account2.Withdraw(withdrawalAmount);
+            Console.WriteLine($"Withdraw Amount: {withdrawalAmount}");
+            Console.WriteLine(DisplayAccountInfo.GetAccountInfo(account2));
+            Console.WriteLine($"Interest Rate: {account2.InterestRate}");
 
-            account1.Deposit(1000);
-            Console.WriteLine(DisplayAccountInfo.GetAccountInfo(account1));
-            account1.Withdraw(500);
-            Console.WriteLine();
-
-           
         }
          
     }
