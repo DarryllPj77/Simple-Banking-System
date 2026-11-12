@@ -126,7 +126,7 @@ BankService
 
 ---
 
-## Phase 2 — Inheritance 🟡 Current
+## Phase 2 — Inheritance ✅ Completed
 
 ### Main Goal
 
@@ -223,11 +223,11 @@ _accounts
 └── CheckingAccount
 ```
 
-#### Task 11 — Review Inheritance Access Modifiers 🟡 Current
+#### Task 11 — Review Inheritance Access Modifiers ✅ Completed
 
 Review how `public`, `private`, and `protected` members behave with inheritance. Use `protected` only when there is a legitimate design reason.
 
-#### Task 12 — Review Inheritance Design ⬜ Planned
+#### Task 12 — Review Inheritance Design ✅ Completed
 
 Explain these relationships:
 
@@ -291,8 +291,8 @@ account.Withdraw(250m);
 - [x] Create `CheckingAccount : BankAccount`.
 - [x] Practice parent-type references to child objects.
 - [x] Store savings and checking accounts in one collection.
-- [ ] Review `public`, `private`, and `protected` inheritance access.
-- [ ] Complete the inheritance relationship/design review.
+- [x] Review `public`, `private`, and `protected` inheritance access.
+- [x] Complete the inheritance relationship/design review.
 
 ---
 
@@ -374,7 +374,7 @@ Improve the structure and usability of the application after the core OOP princi
 ## Current Status
 
 - **Phase 1 — Encapsulation:** ✅ Completed
-- **Phase 2 — Inheritance:** 🟡 Current
+- **Phase 2 — Inheritance:** ✅ Completed
 - **Phase 3 — Polymorphism:** ⬜ Planned
 - **Phase 4 — Abstraction:** ⬜ Planned
 - **Phase 5 — Service and Application Improvements:** ⬜ Planned
