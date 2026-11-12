@@ -8,11 +8,17 @@
 
         #region -- Constructor --
         // Inheriting the constructor of the parent class
-        public SavingsAccount(int accountNumber, string ownerName, decimal interestRate) : base(accountNumber, ownerName)
+        public SavingsAccount(int accountNumber, string ownerName, decimal interestRate) 
+            : base(accountNumber, ownerName)
         {
             this.InterestRate = interestRate;
         }
-
         #endregion
+
+
+        public void TestAccess()
+        {
+            Console.WriteLine(_testValue);
+        }
     }
 }

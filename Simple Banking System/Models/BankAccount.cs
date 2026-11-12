@@ -2,6 +2,12 @@
 {
     public class BankAccount
     {
+        #region -- Field --
+        protected int _testValue = 100;
+
+        #endregion
+
+
         #region -- Properties --
         public int AccountNumber { get; private set; } = 0;
         public string OwnerName { get; private set; } = "";
