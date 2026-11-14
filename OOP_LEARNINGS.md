@@ -305,12 +305,170 @@ public static void DisplayAccountByNumber(
 
 Account lookup and formatting are given clear method names instead of being repeated in `Program`.
 
+## Phase 3 — Abstraction
+
+### Abstraction
+
+- **Term:** Abstraction
+- **Definition:** Abstraction exposes essential behavior while hiding unnecessary implementation details. The common account rules are defined in `BankAccount`, while account types provide their own type-specific behavior.
+- **Short Example:**
+
+```csharp
+public abstract class BankAccount
+{
+	public abstract string GetAccountType();
+}
+```
+
+### Abstract Class
+
+- **Term:** Abstract Class
+- **Definition:** An abstract class cannot be instantiated directly. It can provide shared members and serve as a base class for derived types.
+- **Short Example:**
+
+```csharp
+public abstract class BankAccount
+{
+}
+```
+
+### Abstract Method
+
+- **Term:** Abstract Method
+- **Definition:** An abstract method has no body in the base class. Concrete derived classes must provide its implementation.
+- **Short Example:**
+
+```csharp
+public abstract string GetAccountType();
+```
+
+### Concrete Class
+
+- **Term:** Concrete Class
+- **Definition:** A concrete class is a non-abstract class that can be instantiated. It must implement inherited abstract members.
+- **Short Example:**
+
+```csharp
+public class SavingsAccount : BankAccount
+{
+	public override string GetAccountType()
+	{
+		return "Savings Account";
+	}
+}
+```
+
+### `abstract` Keyword
+
+- **Term:** `abstract` Keyword
+- **Definition:** The `abstract` keyword declares a class that cannot be instantiated or a method that must be implemented by a derived class.
+- **Short Example:**
+
+```csharp
+public abstract class BankAccount
+{
+	public abstract string GetAccountType();
+}
+```
+
+### `override` Keyword
+
+- **Term:** `override` Keyword
+- **Definition:** The `override` keyword supplies the implementation of an inherited abstract method or replaces an inherited virtual method.
+- **Short Example:**
+
+```csharp
+public override string GetAccountType()
+{
+	return "Checking Account";
+}
+```
+
+### Constructor in Abstract Classes
+
+- **Term:** Constructor in an Abstract Class
+- **Definition:** An abstract class can have a constructor. A derived class calls it with `base(...)` when it is created.
+- **Short Example:**
+
+```csharp
+public SavingsAccount(
+	int accountNumber,
+	string ownerName,
+	decimal interestRate)
+	: base(accountNumber, ownerName)
+{
+	InterestRate = interestRate;
+}
+```
+
+### Abstract vs. Regular Methods
+
+- **Term:** Abstract vs. Regular Methods
+- **Definition:** An abstract method declares only required behavior and has no body. A regular method contains its implementation and can be inherited directly.
+- **Short Example:**
+
+```csharp
+public abstract string GetAccountType();
+
+public bool Deposit(decimal amount)
+{
+	// Regular method implementation
+	return true;
+}
+```
+
+### Abstract Class Without Abstract Methods
+
+- **Term:** Abstract Class Without Abstract Methods
+- **Definition:** An abstract class does not require abstract methods. It can be marked abstract simply to prevent direct instantiation while providing shared implemented behavior.
+- **Short Example:**
+
+```csharp
+public abstract class BankAccount
+{
+	public bool Deposit(decimal amount)
+	{
+		return amount > 0;
+	}
+}
+```
+
+### Abstraction and Inheritance
+
+- **Term:** Abstraction and Inheritance
+- **Definition:** A derived class inherits shared behavior from the abstract base class and fulfills the abstract members it has been required to implement.
+- **Short Example:**
+
+```csharp
+public class CheckingAccount : BankAccount
+{
+	public override string GetAccountType()
+	{
+		return "Checking Account";
+	}
+}
+```
+
+### Introduction to Runtime Polymorphism
+
+- **Term:** Introduction to Runtime Polymorphism
+- **Definition:** Different derived objects can execute their own implementations through a common `BankAccount` reference. The implementation used is determined by the actual object at runtime.
+- **Short Example:**
+
+```csharp
+BankAccount savingsAccount = new SavingsAccount(1001, "Darryll", 0.03m);
+BankAccount checkingAccount = new CheckingAccount(1002, "Darryll", 5000m);
+
+Console.WriteLine(savingsAccount.GetAccountType());
+Console.WriteLine(checkingAccount.GetAccountType());
+```
+
 ## Quick Class Map
 
 ```text
 BankAccount
 ├── AccountNumber, OwnerName, Balance
-├── Deposit(), Withdraw()
+├── Deposit(), Withdraw(), GetAccountType()
 ├── SavingsAccount
 │   └── InterestRate
 └── CheckingAccount
@@ -327,4 +485,6 @@ DisplayAccountInfo
 
 - **Phase 1 — Encapsulation:** Completed
 - **Phase 2 — Inheritance:** Completed
-- **Not covered as completed:** Abstraction, polymorphism, and interfaces
+- **Phase 3 — Abstraction:** Completed
+- **Phase 4 — Polymorphism:** Next
+- **Not covered as completed:** Interfaces

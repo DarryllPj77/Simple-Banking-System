@@ -1,6 +1,6 @@
 ﻿namespace Simple_Banking_System.Models
 {
-    public class BankAccount
+    public abstract class BankAccount
     {
         #region -- Field --
         protected int _testValue = 100;
@@ -48,6 +48,13 @@
             }
 
             return false;
+        }
+
+        public abstract string GetAccountType();
+
+        public virtual decimal GetWithdrawalFee()
+        {
+            return 0m;
         }
 
         #endregion

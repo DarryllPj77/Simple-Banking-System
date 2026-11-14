@@ -296,50 +296,58 @@ account.Withdraw(250m);
 
 ---
 
-## Phase 3 — Polymorphism ⬜ Planned
+## Phase 3 — Abstraction ✅ Completed
 
 ### Main Goal
 
-Allow different account types to be used through the common `BankAccount` type while each type provides specialized behavior.
+Expose essential account behavior while hiding implementation details behind an abstract base class.
 
-### Planned Topics
+### Completed Tasks
 
-- `virtual` methods.
-- `override` methods.
-- Base-class references referring to derived objects.
-- Different withdrawal or interest rules for different account types.
-- Runtime method dispatch.
+#### Task 13 — Abstract Class ✅
 
-Possible future account types:
+Converted `BankAccount` into an abstract class and verified that it cannot be instantiated directly.
 
-- `SavingsAccount`
-- `CheckingAccount`
-- `BusinessAccount`
+#### Task 14 — Abstract Method ✅
+
+Declared `GetAccountType()` as an abstract method in `BankAccount` and observed the compiler requirement for concrete derived classes to implement it.
+
+#### Task 15 — Method Implementation ✅
+
+Implemented `GetAccountType()` with `override` in `SavingsAccount` and `CheckingAccount`.
+
+#### Task 16 — Abstract Method Testing ✅
+
+Tested `GetAccountType()` through `BankAccount` references pointing to different child objects.
+
+#### Task 17 — Knowledge Review ✅
+
+Reviewed abstract classes, abstract methods, overriding, and their relationships.
+
+### Phase 3 Checklist
+
+- [x] Convert `BankAccount` to an abstract class.
+- [x] Declare `GetAccountType()` as an abstract method.
+- [x] Implement `GetAccountType()` in `SavingsAccount`.
+- [x] Implement `GetAccountType()` in `CheckingAccount`.
+- [x] Test the method through `BankAccount` references.
+- [x] Review abstraction and its relationship with inheritance.
 
 ---
 
-## Phase 4 — Abstraction ⬜ Planned
+## Phase 4 — Polymorphism ⬜ Planned
 
 ### Main Goal
 
-Define the essential behavior of accounts while hiding implementation details.
+Allow different account objects to respond to the same operation through a common `BankAccount` reference.
 
 ### Planned Topics
 
-- Abstract classes.
-- Abstract methods.
-- Interfaces.
-- Common account contracts.
-- When to use an abstract class versus an interface.
-
-Possible future abstractions:
-
-```csharp
-public abstract class BankAccount
-{
-	public abstract bool Withdraw(decimal amount);
-}
-```
+- Runtime method dispatch.
+- `virtual` methods.
+- `override` methods in polymorphic designs.
+- Different account-specific behavior through a shared base type.
+- When polymorphism is useful in the banking system.
 
 ---
 
@@ -375,6 +383,6 @@ Improve the structure and usability of the application after the core OOP princi
 
 - **Phase 1 — Encapsulation:** ✅ Completed
 - **Phase 2 — Inheritance:** ✅ Completed
-- **Phase 3 — Polymorphism:** ⬜ Planned
-- **Phase 4 — Abstraction:** ⬜ Planned
+- **Phase 3 — Abstraction:** ✅ Completed
+- **Phase 4 — Polymorphism:** ⬜ Planned
 - **Phase 5 — Service and Application Improvements:** ⬜ Planned

@@ -15,10 +15,20 @@
         }
         #endregion
 
-
+        #region -- Methods --
         public void TestAccess()
         {
             Console.WriteLine(_testValue);
         }
+
+        public override string GetAccountType()
+        {
+            return "Savings Account";
+        }
+
+
+
+
+        #endregion
     }
 }
